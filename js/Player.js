@@ -18,19 +18,33 @@ class Player {
     World.add(world, this.body);
   }
 
+  reduceLife(computerArcherLife){
+    if(computerArcherLife === 2){
+      this.life3 = "red";
+    }
+
+    if(computerArcherLife === 1){
+      this.life2 = "red";
+    }
+
+    if(computerArcherLife === 0){
+      this.life1 = "red";
+    }
+
+  }
  
-  life(){
+  life() {
     push();
     textSize(20);
     fill("white");
-    text("Player",280,100);
+    text("Player", 280, 40);
 
     fill(this.life1);
-    rect(180,130,70,30);
+    rect(180, 50, 70, 30);
     fill(this.life2);
-    rect(250,130,70,30);
+    rect(250, 50, 70, 30);
     fill(this.life3);
-    rect(320,130,70,30);
+    rect(320, 50, 70, 30);
     pop();
   }
  
