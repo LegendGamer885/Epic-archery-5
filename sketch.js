@@ -26,7 +26,7 @@ function setup() {
   engine = Engine.create();
   world = engine.world;
 
-  playerBase = new PlayerBase(300,450,300, 180, 150);
+  playerBase = new PlayerBase(300,random(450,height-300), 180, 150);
   player = new Player(285, playerBase.body.position.y - 153, 50, 180);
   playerArcher = new PlayerArcher(
     340,
