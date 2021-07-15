@@ -175,7 +175,21 @@ function handlePlayerArrowCollision() {
     ) 
 
     {
-      console.log("Player Arrow Collided")
+      computerArcherLife -= 1;
+      computer.reduceLife(computerArcherLife);
+      if(computerArcherLife <= 0){
+        text("GAMEOVER YOU WON",width - 350,250);
+        computerArcher.collapse = true; 
+        computerArcher.remove();
+        playerArcher.remove();
+        
+        Matter.Body.setStatic(computerArcher.body,false);
+        Matter.Body.setStatic(computer.body,false);
+        Matter.Body.setStatic(computerArcher.body,{
+          x:width -100,
+          y: computer.body.position.y
+        });
+      }
     }
   }
 }
@@ -203,7 +217,21 @@ function handleComputerArrowCollision() {
       playerCollision.collided
     )
     {
-      console.log("Computer Arrow Collided")
+      playerArcherLife -= 1;
+      player.reduceLife(playerArcherLife);
+      if(playerArcherLife <= 0){
+        text("GAMEOVER YOU LOST",width - 350,250);
+        playerArcher.collapse = true; 
+        playerArcher.remove();
+        computerArcher.remove();
+        
+        Matter.Body.setStatic(playerArcher.body,false);
+        Matter.Body.setStatic(player.body,false);
+        Matter.Body.setStatic(playerArcher.body,{
+          x:width -100,
+          y: player.body.position.y
+        });
+      }
     }
   }
 }
