@@ -17,6 +17,21 @@ class Computer {
     World.add(world, this.body);
   }
 
+   reduceLife(playerArcherLife){
+    if(playerArcherLife === 2){
+      this.life3 = "red";
+    }
+
+    if(playerArcherLife === 1){
+      this.life2 = "red";
+    }
+
+    if(playerArcherLife === 0){
+      this.life1 = "red";
+    }
+
+  }
+  
   life() {
     push(); 
     textSize(20);
