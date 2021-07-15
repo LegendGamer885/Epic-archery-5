@@ -163,7 +163,7 @@ function handlePlayerArrowCollision() {
       computerArcher.body
     );
 
-    var computerCollision = Matter.SAT.collides(
+    var computerCollision = Matter.SAT.collides(  
       playerArrows[i].body,
       computer.body
     );
@@ -172,9 +172,7 @@ function handlePlayerArrowCollision() {
       baseCollision.collided ||
       archerCollision.collided ||
       computerCollision.collided
-    ) 
-
-    {
+    ) {
       computerArcherLife -= 1;
       computer.reduceLife(computerArcherLife);
       if(computerArcherLife <= 0){
@@ -215,8 +213,7 @@ function handleComputerArrowCollision() {
       baseCollision.collided ||
       archerCollision.collided ||
       playerCollision.collided
-    )
-    {
+    ) {
       playerArcherLife -= 1;
       player.reduceLife(playerArcherLife);
       if(playerArcherLife <= 0){
