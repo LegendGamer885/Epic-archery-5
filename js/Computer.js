@@ -17,18 +17,18 @@ class Computer {
     World.add(world, this.body);
   }
 
-  life(){
-    push();
+  life() {
+    push(); 
     textSize(20);
     fill("white");
-    text("Computer",width-290,100);
+    text("Computer", width - 310, 40);
 
     fill(this.life1);
-    rect(width-390,130,70,30);
+    rect(width - 420, 50, 70, 30);
     fill(this.life2);
-    rect(width-320,130,70,30);
+    rect(width - 350, 50, 70, 30);
     fill(this.life3);
-    rect(width-250,130,70,30);
+    rect(width - 280, 50, 70, 30);
     pop();
   }
   
